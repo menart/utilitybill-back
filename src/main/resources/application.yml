@@ -1,0 +1,27 @@
+server:
+  port: ${SERVER_PORT}
+
+spring:
+  r2dbc:
+    url: r2dbc:pool:postgres://${PG_HOST}:${PG_PORT}/${PG_DB}
+    username: ${PG_USER}
+    password: ${PG_USER_PASSWORD}
+
+# Liquidbase
+  liquibase:
+    enabled: true
+    url: jdbc:postgresql://${PG_HOST}:${PG_PORT}/${PG_DB}
+    user: ${PG_ROOT}
+    password: ${PG_ROOT_PASSWORD}
+    change-log: classpath:db/changelog/db.changelog-master.yaml
+
+jwt:
+  password:
+    encoder:
+      secret: ${JWT_ENCODER_SECRET}
+      iteration: ${JWT_ENCODER_ITERATION}
+      key-length: ${JWT_ENCODER_KEY_LENGTH}
+  secret: ${JWT_SECRET}
+  expiration: ${JWT_EXPIRATION}
+  issuer: utility-bill
+
