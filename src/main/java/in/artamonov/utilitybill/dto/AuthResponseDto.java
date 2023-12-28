@@ -9,10 +9,10 @@ import java.util.Date;
 
 @Data
 @Builder
-@JsonNaming(PropertyNamingStrategies.KebabCaseStrategy.class)
 public class AuthResponseDto {
 
     private Long userId;
+    private String username;
     private String token;
     private Date issuedAt;
     private Date expiresAt;
