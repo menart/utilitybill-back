@@ -14,6 +14,7 @@ import java.util.Date;
 public class TokenDetails {
 
     private Long userId;
+    private String username;
     private String token;
     private Date issuedAt;
     private Date expiresAt;

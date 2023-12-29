@@ -31,6 +31,7 @@ public class AuthController {
                 .flatMap(tokenDetails -> Mono.just(
                         AuthResponseDto.builder()
                                 .userId(tokenDetails.getUserId())
+                                .username(tokenDetails.getUsername())
                                 .token(tokenDetails.getToken())
                                 .issuedAt(tokenDetails.getIssuedAt())
                                 .expiresAt(tokenDetails.getExpiresAt())

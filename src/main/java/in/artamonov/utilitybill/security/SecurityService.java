@@ -78,6 +78,7 @@ public class SecurityService {
 
                     return Mono.just(generateToken(userDto).toBuilder()
                             .userId(userDto.getId())
+                            .username(userDto.getUsername())
                             .build());
                 })
                 .switchIfEmpty(Mono.error(new WrongUserException()));
